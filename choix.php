@@ -60,14 +60,11 @@ session_start();
     <!-- Location Selection Section -->
     <section id="location">
         <div>
-
             <!-- Title for Location Selection -->
             <p class="tittle-section"> Location Selection</p>
-
             <!-- Text and Photo Section -->
             <div class="text-photo">
                 <div class="text">
-
                     <!-- Description of Location Selection -->
                     <p>Welcome to our gardening guide dedicated to the "Location Planting" section. Here, we provide
                         advice on the ideal locations to cultivate different plants, tailored to their specific needs.

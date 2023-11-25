@@ -1,6 +1,8 @@
 <?php
+// Start or resume the session
 session_start();
 
+// If the user is not logged in, redirect to the sign-in page
 if (!isset($_SESSION['id'])) {
     header("Location: sign-in.php");
     exit;
@@ -20,7 +22,7 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body>
-    <!--section header-->
+    <!-- Header section -->
     <section id="container">
         <header>
             <div class="logo">
@@ -29,6 +31,7 @@ if (!isset($_SESSION['id'])) {
             <!-- menu responsive -->
             <div class="menu-toggle"></div>
 
+            <!-- Navigation menu -->
             <ul class="menu">
                 <li><a href="./home.php">Home</a></li>
                 <li><a href="./about.php">About Us</a></li>
@@ -37,6 +40,8 @@ if (!isset($_SESSION['id'])) {
                 <li><a href="./logout.php">Déconnexion</a></li>
             </ul>
         </header>
+
+        <!-- Container text for the welcome message -->
         <div class="container-text">
             <p>Welcome to HeyAgri, where we offer a comprehensive range of services to optimize the management of your
                 urban vegetable garden. Explore how we can help you grow high-quality vegetables efficiently and
@@ -45,10 +50,12 @@ if (!isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <!--section header-->
+    <!-- Services section -->
     <section id="services">
         <h1 class="title">Services</h1>
+        <!-- Service 1 -->
         <div class="list-services">
+            <!-- Left side with service description -->
             <div class="left">
                 <h1>1</h1>
                 <div class="description">
@@ -59,6 +66,7 @@ if (!isset($_SESSION['id'])) {
                         successful start for your urban garden.</p>
                 </div>
             </div>
+            <!-- Right side with image and link to specific service -->
             <div class="right">
                 <a href="./choix.php">
                     <img src="./img/pots1.jpg" alt="">
@@ -68,7 +76,9 @@ if (!isset($_SESSION['id'])) {
                 </a>
             </div>
         </div>
+        <!-- Service 2 -->
         <div class="list-services">
+            <!-- Left side with service description -->
             <div class="left">
                 <h1>2</h1>
                 <div class="description">
@@ -79,6 +89,7 @@ if (!isset($_SESSION['id'])) {
                         receives the hydration it deserves for robust growth.</p>
                 </div>
             </div>
+            <!-- Right side with image and link to specific service -->
             <div class="right">
                 <a href="./watering.php">
                     <img src="./img/arrosage1.jpg" alt="">
@@ -88,7 +99,9 @@ if (!isset($_SESSION['id'])) {
                 </a>
             </div>
         </div>
+        <!-- Service 3 -->
         <div class="list-services">
+            <!-- Left side with service description -->
             <div class="left">
                 <h1>3</h1>
                 <div class="description">
@@ -99,6 +112,7 @@ if (!isset($_SESSION['id'])) {
                         with HeyAgri.</p>
                 </div>
             </div>
+            <!-- Right side with image and link to specific service -->
             <div class="right">
                 <a href="care.php">
                     <img src="./img/pots1.jpg" alt="">
@@ -108,7 +122,9 @@ if (!isset($_SESSION['id'])) {
                 </a>
             </div>
         </div>
+        <!-- Service 4 -->
         <div class="list-services">
+            <!-- Left side with service description -->
             <div class="left">
                 <h1>4</h1>
                 <div class="description">
@@ -119,6 +135,7 @@ if (!isset($_SESSION['id'])) {
                         knowing you've harvested your vegetables at their peak.</p>
                 </div>
             </div>
+            <!-- Right side with image and link to specific service -->
             <div class="right">
                 <a href="./harvest.php">
                     <img src="./img/carotte1.jpg" alt="">
@@ -129,14 +146,18 @@ if (!isset($_SESSION['id'])) {
             </div>
         </div>
     </section>
-    <!-- footer -->
+
+    <!-- Footer section -->
     <footer>
+        <!-- Copyright information with a leaf icon -->
         <div>
             <i class="fa fa-leaf" aria-hidden="true"></i>
             <p>Copyright HeyAgri</p>
         </div>
 
     </footer>
+
+    <!-- Script for menu toggle functionality -->
     <script src="./jss/menu.js"></script>
 </body>
 

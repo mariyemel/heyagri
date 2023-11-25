@@ -1,10 +1,11 @@
 <?php
+// Start or resume the session
 session_start();
 
-// Détruire toutes les données de session
+// Destroy all session data
 $_SESSION = array();
 
-// Si vous voulez détruire complètement la session, effacez également le cookie de session.
+// If you want to completely destroy the session, also delete the session cookie
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(
@@ -18,9 +19,9 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Finalement, détruire la session.
+// Finally, destroy the session
 session_destroy();
 
-// Rediriger vers la page de connexion ou la page d'accueil après la déconnexion
+// Redirect to the login page or the home page after logout
 header("Location: home.php");
 exit;

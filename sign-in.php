@@ -31,13 +31,13 @@ if (isset($_POST['send'])) {
                 header("Location: services.php");
                 exit(); // Make sure to exit the script after redirection
             } else {
-                $erreur = "Mot de passe incorrect";
+                $erreur = "Incorrect password";
             }
         } else {
-            $erreur = "Utilisateur non trouvé";
+            $erreur = "User not found";
         }
     } else {
-        $erreur = "Veuillez saisir toutes les informations.";
+        $erreur = "Please enter all information.";
     }
 }
 ?>

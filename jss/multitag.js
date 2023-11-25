@@ -1,4 +1,5 @@
 function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
+    // Variables to store various DOM elements
     var element = null
     var options = null
     var customSelectContainer = null
@@ -12,8 +13,11 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
     var drawer = null
     var ul = null
     var domParser = new DOMParser()
+
+    // Initialize the multi-select tag
     init()
 
+    // Function to initialize the multi-select tag
     function init() {
         element = document.getElementById(el)
         createElements()
@@ -21,6 +25,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         enableItemSelection()
         setValues(false)
 
+        // Add event listener for button click
         button.addEventListener('click', () => {
             if (drawer.classList.contains('hidden')) {
                 initOptions()
@@ -30,11 +35,13 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
             }
         })
 
+        // Add event listener for input keyup
         input.addEventListener('keyup', (e) => {
             initOptions(e.target.value)
             enableItemSelection()
         })
 
+        // Add event listener for input keydown (for Backspace)
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Backspace' && !e.target.value && inputContainer.childElementCount > 1) {
                 const child = body.children[inputContainer.childElementCount - 2].firstChild
@@ -46,6 +53,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
 
         })
 
+        // Add global click event listener to close the drawer when clicking outside
         window.addEventListener('click', (e) => {
             if (!customSelectContainer.contains(e.target)) {
                 drawer.classList.add('hidden')
@@ -54,6 +62,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
 
     }
 
+    // Function to create DOM elements for the multi-select tag
     function createElements() {
         // Create custom elements
         options = getOptions();
@@ -101,6 +110,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         button.type = 'button'
         btnContainer.append(button)
 
+        // SVG icon for the button
         const icon = domParser.parseFromString(`<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 21 6 15"></polyline></svg>`, 'image/svg+xml').documentElement
         button.append(icon)
@@ -109,6 +119,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         body.append(btnContainer)
         wrapper.append(body)
 
+        // Drawer for displaying options
         drawer = document.createElement('div');
         drawer.classList.add(...['drawer', 'hidden'])
         if (customs.shadow) {
@@ -134,6 +145,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         }
     }
 
+    // Function to initialize options based on user input
     function initOptions(val = null) {
         ul.innerHTML = ''
         for (var option of options) {
@@ -156,6 +168,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         }
     }
 
+    // Function to create a tag for a selected option
     function createTag(option) {
         // Create and show selected item as tag
         const itemDiv = document.createElement('div');
@@ -182,6 +195,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         inputContainer.append(itemDiv)
     }
 
+    // Function to enable item selection in the dropdown
     function enableItemSelection() {
         // Add click listener to the list items
         for (var li of ul.children) {
@@ -195,6 +209,7 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         }
     }
 
+    // Function to check if a tag is already selected
     function isTagSelected(val) {
         // If the item is already selected
         for (var child of inputContainer.children) {
@@ -204,6 +219,8 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
         }
         return false
     }
+
+    // Function to remove a tag
     function removeTag(val) {
         // Remove selected item
         for (var child of inputContainer.children) {
@@ -212,6 +229,8 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
             }
         }
     }
+
+    // Function to set the final values based on selected options
     function setValues(fireEvent = true) {
         // Update element final values
         selected_values = []
@@ -225,6 +244,8 @@ function MultiSelectTag(el, customs = { shadow: false, rounded: true }) {
             customs.onChange(selected_values)
         }
     }
+
+    // Function to get the options from the original select element
     function getOptions() {
         // Map element options
         return [...element.options].map((op) => {

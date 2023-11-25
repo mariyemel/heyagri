@@ -1,0 +1,60 @@
+#resultat {
+    height: 100vh;
+    margin: 0 10%;
+}
+
+.resultat h3,
+.plant-selection h3,
+.default-info h3 {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2fc665;
+    font-size: 35px;
+    text-transform: capitalize;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.resultat h4 {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #485e6bcc;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.default-info h2,
+.plant-selection h3 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2fc665;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-family: 'Kaushan Script', cursive;
+}
+
+p,
+.default-info li {
+    width: 90%;
+    margin-left: 5%;
+    text-align: justify;
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    background-color: #2fc665;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}

@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Kaushan+Script&family=Poppins:wght@500&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #2fc665;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+header .logo img {
+    margin: 20;
+    margin-bottom: 5px;
+    width: 150px;
+    height: auto;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+}
+
+header .menu li {
+    margin: 0 15px;
+}
+
+header .menu li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+#resultat {
+    height: 100vh;
+    margin: 20px;
+}
+
+.plant-selection h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2fc665;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.resultat h3 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2fc665;
+    font-size: 35px;
+    text-transform: capitalize;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.resultat h4 {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #485e6bcc;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.text-photo {
+    width: 90%;
+    margin: 5% 5%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    height: 300px;
+}
+
+
+.text-photo .text {
+    width: 55%;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.text-photo img {
+    width: 40%;
+    border-radius: 15px;
+}
+
+footer {
+    background-color: #2fc665;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer div i {
+    margin-right: 5px;
+}
+
+@media (max-width:784px) {
+    #container {
+        padding: 5px 20px;
+    }
+
+    header .menu {
+        display: none;
+    }
+
+    header .menu-toggle {
+        border: 2px solid #fff;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    header .menu-toggle::before {
+        position: absolute;
+        content: "";
+        width: 28px;
+        height: 2px;
+        background-color: #fff;
+        transform: translateY(-10px);
+        box-shadow: 0 10px #fff;
+        transition: 0.2s;
+    }
+
+    header .menu-toggle.active::before {
+        transform: translate(0) rotate(45deg);
+        box-shadow: 0 0 #fff;
+    }
+
+    header .menu-toggle::after {
+        position: absolute;
+        content: "";
+        width: 28px;
+        height: 2px;
+        background-color: #fff;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+
+    header .menu-toggle.active::after {
+        transform: translate(0) rotate(-45deg);
+
+    }
+
+    header .menu.responsive {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 100px;
+        height: fit-content;
+        background-color: #2fc665;
+        width: 200px;
+
+    }
+
+    header .menu.responsive li {
+        text-align: center;
+        margin: 25px 0;
+    }
+}

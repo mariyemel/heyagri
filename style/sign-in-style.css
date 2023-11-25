@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Kaushan+Script&family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sign-in {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(../img/contact1.jpg);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #2fc665;
+}
+
+header .logo img {
+    margin: 20px;
+    width: 150px;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+}
+
+header .menu li {
+    margin: 0 15px;
+}
+
+header .menu li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.sign-in .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.sign-in .content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: white;
+}
+
+.sign-in-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+.sign-in-form {
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+}
+
+.sign-in-form h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.sign-in-form .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sign-in-form input,
+.sign-in-form textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 16px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.sign-in-form span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    margin: 0;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.sign-in-form input:focus~span,
+.sign-in-form textarea:focus~span {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+/* Ajout de styles pour les champs vides */
+.sign-in-form input:placeholder-shown~span,
+.sign-in-form textarea:placeholder-shown~span {
+    color: #666;
+    font-size: 16px;
+    transform: translateY(0);
+}
+
+.sign-in-form input[type="submit"] {
+    width: 100%;
+    background-color: #2fc665;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+/* Style pour le lien "sign up" en bas du formulaire */
+.sign-in-form p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.sign-in-form a {
+    color: #2fc665;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+@media (max-width:991px) {
+    header .menu {
+        display: none;
+    }
+
+    header .menu-toggle {
+        border: 2px solid #fff;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    header .menu-toggle::before {
+        position: absolute;
+        content: "";
+        width: 28px;
+        height: 2px;
+        background-color: #fff;
+        transform: translateY(-10px);
+        box-shadow: 0 10px #fff;
+        transition: 0.2s;
+    }
+
+    header .menu-toggle.active::before {
+        transform: translate(0) rotate(45deg);
+        box-shadow: 0 0 #fff;
+    }
+
+    header .menu-toggle::after {
+        position: absolute;
+        content: "";
+        width: 28px;
+        height: 2px;
+        background-color: #fff;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+
+    header .menu-toggle.active::after {
+        transform: translate(0) rotate(-45deg);
+
+    }
+
+    header .menu.responsive {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 100px;
+        height: fit-content;
+        background-color: #2fc665;
+        width: 200px;
+        z-index: 1;
+
+    }
+
+    header .menu.responsive li {
+        text-align: center;
+        margin: 25px 0;
+    }
+
+    .sign-in {
+        padding: 50px;
+    }
+
+    .sign-in-form {
+        width: 100%;
+    }
+
+}

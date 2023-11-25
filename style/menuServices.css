@@ -1,0 +1,66 @@
+#our-services {
+    height: 50vh;
+    width: 100%;
+}
+
+.liste-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 22.5%;
+
+}
+
+.liste-photos .service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.liste-photos .service-img {
+    width: 100%;
+    height: 60px;
+    border-radius: 10PX;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1%;
+    cursor: pointer;
+
+}
+
+.liste-photos .service-img:hover img {
+    transform: scale(1.2);
+}
+
+.show-service {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.show-service p {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.liste-photos .service-img:hover .show-service {
+    opacity: 1;
+}
+
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+}

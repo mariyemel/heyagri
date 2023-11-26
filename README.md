@@ -95,3 +95,15 @@ Nous avons utilisé un système de contrôle de version (VCS) qui est Git afin d
 ## Patterns de conception
 
 Application de différents patterns de conception comme le Module Pattern, la Factory Function, la Configuration Object, le Callback Pattern, et l'utilisation judicieuse de l'API DOM reflète une approche méthodique. Ces choix de conception assurent une structure modulaire, une encapsulation efficace, et une gestion flexible des fonctionnalités.
+
+- Module Pattern : La fonction MultiSelectTag est encapsulée dans une fonction auto-exécutante, instaurant ainsi un contexte privé pour les variables et fonctions, écartant ainsi tout impact sur l'espace global.
+
+- Factory Function : La fonction MultiSelectTag agit en tant que factory function, instiguant la création d'une instance du composant multi-tags. Elle prend en considération un élément cible (el) et des options personnalisées.
+
+- Configuration Object : L'utilisation de l'objet customs en tant qu'objet de configuration offre une flexibilité accrue pour ajuster le comportement du composant de manière personnalisée.
+
+- Callback Pattern : La fonction customs.onChange est exploitée en tant que callback personnalisée, déclenchée lors de modifications dans la sélection, permettant ainsi une extensibilité à travers la personnalisation des actions.
+
+- Encapsulation : La logique du composant est enfermée à l'intérieur de la fonction MultiSelectTag, restreignant la portée des variables internes à cette fonction, contribuant ainsi à la cohérence et à la lisibilité du code.
+
+- Utilisation de l'API DOM : Les fonctions de l'API DOM sont utilisées pour créer et manipuler les éléments HTML, conformément aux bonnes pratiques de manipulation du DOM.

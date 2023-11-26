@@ -91,3 +91,7 @@ Dans notre projet, nous avons insérés package de Json, Readme et composer pour
 ## Système de CVS 
 
 Nous avons utilisé un système de contrôle de version (VCS) qui est Git afin d’initialiser notre projet et ajouter les modifications.
+
+## Patterns de conception
+
+Application de différents patterns de conception comme le Module Pattern, la Factory Function, la Configuration Object, le Callback Pattern, et l'utilisation judicieuse de l'API DOM reflète une approche méthodique. Ces choix de conception assurent une structure modulaire, une encapsulation efficace, et une gestion flexible des fonctionnalités.
